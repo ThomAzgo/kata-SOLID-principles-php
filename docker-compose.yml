@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  db:
+    image: mariadb:10.7.1
+    container_name: mariadb_docker
+    restart: always
+    volumes:
+      - db-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: "ChangeMeLater"
+    networks:
+      - dev
+
+networks:
+  dev:
+
+volumes:
+  db-data:
